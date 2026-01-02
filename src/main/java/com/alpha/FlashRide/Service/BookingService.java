@@ -22,7 +22,8 @@ import jakarta.transaction.Transactional;
 @Service
 public class BookingService {
 
-
+@Autowired
+private MailService mailservice;
 	@Autowired
 	private CustomerRepository customerRepository;
 
@@ -84,4 +85,11 @@ public class BookingService {
 		return rs;
 	}
 
+
+	public void bookveh() {
+		// TODO Auto-generated method stub
+		//logic for booking , cus,veh
+		mailservice.sendMail("bhavaniprasadgoud278@gmail.com","booked vehicle","dfhgdhghjfhjgfjhf");
+	}
 }
+
