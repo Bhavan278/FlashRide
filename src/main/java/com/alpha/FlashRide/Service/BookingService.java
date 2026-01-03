@@ -76,6 +76,8 @@ private MailService mailservice;
 		vehicle.setAvailableStatus("booked");
 		vehicleRepository.save(vehicle);
 
+		mailservice.sendMail("bhavaniprasadgoud278@gmail.com","booked vehicle","dfhgdhghjfhjgfjhf");
+		
 		// Response
 		ResponseStructure<Booking> rs = new ResponseStructure<>();
 		rs.setStatuscode(HttpStatus.OK.value());
@@ -84,12 +86,11 @@ private MailService mailservice;
 
 		return rs;
 	}
+	
 
-
-	public void bookveh() {
-		// TODO Auto-generated method stub
-		//logic for booking , cus,veh
-		mailservice.sendMail("bhavaniprasadgoud278@gmail.com","booked vehicle","dfhgdhghjfhjgfjhf");
-	}
+//	public void bookveh() {
+//		
+//		mailservice.sendMail("bhavaniprasadgoud278@gmail.com","booked vehicle","dfhgdhghjfhjgfjhf");
+//	}
 }
 

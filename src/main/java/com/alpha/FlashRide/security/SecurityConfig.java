@@ -30,6 +30,8 @@ public class SecurityConfig {
             )
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/driver/savedriver").permitAll()
+                .requestMatchers("/customer/registercustomer").permitAll()
                 .requestMatchers("/customer/**").hasRole("CUSTOMER")
                 .requestMatchers("/driver/**").hasRole("DRIVER")
                 .anyRequest().authenticated()
