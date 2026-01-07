@@ -25,10 +25,12 @@ package com.alpha.FlashRide.entity;
 		private int pricePerKM;
 		private double avgSpeed;
 		
+		
+		
 		@OneToOne
-		@MapsId
-		@JoinColumn(name = "id") 
+		@JoinColumn(name = "driver_id", referencedColumnName = "id")
 		private Driver driver;
+
 
 		
 		public int getId() {

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -61,6 +62,9 @@ public class CustomerService {
 	
 	@Autowired
 	private UserrRepo userrRepo;
+	
+	@Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
 //========separate method to get city from latitude ,longitude========
 
@@ -155,8 +159,11 @@ public class CustomerService {
 
 		Userr user = new Userr();
 		user.setMobno(dto.getMobileNo());
-		user.setPassword(dto.getPassword());
+		user.setPassword(passwordEncoder.encode(dto.getPassword()));
+
 		user.setRole("CUSTOMER");
+		
+		c.setUserr(user);
 		
 		userrRepo.save(user);
 		customerRepo.save(c);

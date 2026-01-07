@@ -76,7 +76,7 @@ private MailService mailservice;
 		vehicle.setAvailableStatus("booked");
 		vehicleRepository.save(vehicle);
 
-		mailservice.sendMail("bhavaniprasadgoud278@gmail.com","booked vehicle","dfhgdhghjfhjgfjhf");
+//		mailservice.sendMail("bhavaniprasadgoud278@gmail.com","booked vehicle","dfhgdhghjfhjgfjhf");
 		
 		// Response
 		ResponseStructure<Booking> rs = new ResponseStructure<>();

@@ -17,14 +17,7 @@ import jakarta.persistence.OneToOne;
 	@Entity
 	public class Customer {
 		
-		public Userr getUserr() {
-			return userr;
-		}
-
-		public void setUserr(Userr userr) {
-			this.userr = userr;
-		}
-
+		
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private int id;
@@ -46,6 +39,15 @@ import jakarta.persistence.OneToOne;
 		@JsonIgnore
 		private List<Booking> bookinglist = new ArrayList<>();
 
+		public Userr getUserr() {
+			return userr;
+		}
+
+		public void setUserr(Userr userr) {
+			this.userr = userr;
+		}
+
+		
 		public int getId() {
 			return id;
 		}
