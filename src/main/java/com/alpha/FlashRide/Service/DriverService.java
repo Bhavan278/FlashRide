@@ -110,8 +110,9 @@ public class DriverService {
 		user.setMobno(dto.getMobileNo());
 		user.setPassword(passwordEncoder.encode(dto.getPassword()));
 		user.setRole("DRIVER");
-		
+		d.setUserr(user);
 		userrRepo.save(user);
+		
 		Driver savedDriver = dr.save(d);
 
 		ResponseStructure<Driver> rs = new ResponseStructure<>();
